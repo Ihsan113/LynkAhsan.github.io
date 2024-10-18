@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahsan Store - Modern Profile</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7MkqrOImJhEYIFLHZIUCOgm29y-r-MKVe2A&usqp=CAU');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header, footer {
+      background-color: #021217e7;
+      color: #d5f4ffdd;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.5.1rem;
+      font-weight: bold;
+      border-radius: 12px;
+    }
+
+    .container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 6px 16px rgba(0, 255, 255, 0.4);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+ .menu-item {
+      background-color: #0e171bdd;
+      padding: 15px;
+      border-radius: 17px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden; /* Agar pseudo-element tidak melampaui batas */
+    }
+
+    .menu-item::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      border-radius: 17px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+      background-size: 400% 400%;
+      z-index: 0;
+      animation: glowing-border 3s linear infinite; /* Animasi border */
+    }
+
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+      z-index: 1;
+    }
+
+    .menu-item a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1rem;
+      flex-grow: 1;
+      z-index: 1;
+    }
+
+    @keyframes glowing-border {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #00ffff;
+      border-radius: 10px;
+    }
+
+
+  /* CSS untuk animasi loading */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .loading-bar {
+      width: 80%;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .loading-progress {
+      width: 0;
+      height: 100%;
+      background-color: #00ffff;
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    .loading-percentage {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Sembunyikan konten utama saat loading */
+    body.loading .container,
+    body.loading header,
+    body.loading footer {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Ahsan Store - Profil
+  </header>
+
+  <div class="container">
+    <!-- Gambar Profil -->
+    <img src="https://iili.io/22RQBYN.png" alt="Profile Picture" class="profile-pic">
+    <h1>Ahsan Store</h1>
+    <p>@ahsanjb123</p>
+
+    <!-- Menu -->
+    <div class="menu">
+      <div class="menu-item">
+        <img src="https://iili.io/22RtQBs.jpg" alt="Home Icon">
+        <a href="https://wa.me/6285714203835">WA REKBER+JP</a>
+      </div>
+      <div class="menu-item">
+        <img src="https://iili.io/22RtQBs.jpg" alt="Profile Icon">
+        <a href="https://wa.me/62895622703503">NOMOR REKBER</a>
+      </div>
+      <div class="menu-item">
+        <img src="https://iili.io/22RypzN.jpg" alt="Games Icon">
+        <a href="https://ahsan-store-github-io.vercel.app/">WEBSITE TOPUP AHSAN</a>
+      </div>
+      <div class="menu-item">
+        <img src="https://iili.io/22RtQBs.jpg" alt="Store Icon">
+        <a href="https://chat.whatsapp.com/DkNKFNTbUue7Zn4FkAUY3Z">JB||Al game × Ahsan🤩¹</a>
+      </div>
+      <div class="menu-item">
+        <img src="https://iili.io/22RtQBs.jpg" alt="Settings Icon">
+        <a href="https://chat.whatsapp.com/FKHfq03djmGL9BR7bnSdWD">GRUP JB AHSAN 2</a>
+      </div>
+      <div class="menu-item">
+        <img src="https://iili.io/22RtQBs.jpg" alt="Support Icon">
+        <a href="https://www.instagram.com/firdausalamsyahbudi?igsh=MW9zdzliNHBwOHh2ag==">INSTAGRAM MINSAN</a>
+      </div>
+    </div>
+  </div>
+<body class="loading">
+
+  <div class="loading-overlay">
+    <h1>Loading...</h1>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+    <div class="loading-percentage">0%</div>
+  </div>
+
+  <footer>
+    &copy; 2024 Ahsan Store. All rights reserved.
+  </footer>
+ <script>
+    // Fungsi untuk mendapatkan nilai acak dalam rentang tertentu
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Fungsi untuk menggerakkan item secara acak dan kembali ke posisi awal
+    function moveRandomly(element) {
+      const randomX = getRandom(-30, 30); // Acak nilai X (-30px s/d 30px)
+      const randomY = getRandom(-30, 30); // Acak nilai Y (-30px s/d 30px)
+
+      // Terapkan transformasi acak
+      element.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+      // Setelah 0.5 detik, kembalikan ke posisi semula
+      setTimeout(() => {
+        element.style.transform = `translate(0, 0)`; // Kembali ke posisi awal
+      }, 500);
+    }
+
+    // Ambil semua elemen menu-item
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    // Interval untuk menggerakkan setiap item secara acak setiap 3 detik
+    setInterval(() => {
+      menuItems.forEach(item => {
+        moveRandomly(item);
+      });
+    }, 3000);
+    
+      // Fungsi untuk memperbarui progress loading
+    function updateLoadingProgress() {
+      const loadingProgress = document.querySelector('.loading-progress');
+      const loadingPercentage = document.querySelector('.loading-percentage');
+      let progress = 0;
+
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 10) + 5; // Update acak untuk simulasi loading
+        if (progress > 100) progress = 100; // Batas maksimum 100%
+        
+        loadingProgress.style.width = progress + '%';
+        loadingPercentage.textContent = progress + '%';
+
+        if (progress === 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            document.body.classList.remove('loading');
+            document.querySelector('.loading-overlay').style.display = 'none';
+          }, 500); // Tambahan jeda waktu setelah progress 100%
+        }
+      }, 500); // Interval pembaruan setiap 0.5 detik
+    }
+
+    // Panggil fungsi setelah halaman mulai dimuat
+    window.addEventListener('load', () => {
+      updateLoadingProgress();
+    });
+  </script>
+</body>
+</html>
